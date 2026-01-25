@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fuck the Rams</title>
+  <meta name="description" content="Seahawks vs Rams countdown timer." />
+
+  <!-- Libre Caslon Text (Bold) -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- BLUE full-width header -->
+  <header class="band band-blue">
+    <div class="inner">
+      <h1 class="title">FUCK THE RAMS</h1>
+    </div>
+  </header>
+
+  <!-- GREEN full-width countdown -->
+  <section class="band band-green" aria-label="Countdown">
+    <div class="inner">
+      <h2 class="subtitle">Seahawks vs Rams NFC Championship Game</h2>
+
+      <div class="timer" role="timer" aria-live="polite">
+        <div class="unit">
+          <div class="num" id="days">0</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="unit">
+          <div class="num" id="hours">00</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="unit">
+          <div class="num" id="minutes">00</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="unit">
+          <div class="num" id="seconds">00</div>
+          <div class="label">Seconds</div>
+        </div>
+      </div>
+
+      <p class="status" id="status"></p>
+    </div>
+  </section>
+
+  <!-- GRAY full-width area under countdown -->
+  <footer class="band band-gray">
+    <div class="inner">
+      <p class="footer-text">It's gameday 12s.  Go Hawks and FUCK THE RAMS!</p>
+    </div>
+  </footer>
+
+  <script src="countdown.js"></script>
+</body>
+</html>

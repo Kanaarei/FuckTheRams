@@ -37,7 +37,7 @@
     const seconds = totalSeconds % 60;
 
     setValues(days, hours, minutes, seconds);
-    elStatus.textContent = "Counting down to 3:30 PM Pacific.";
+    elStatus.textContent = "Counting down to kickoff.";
   }
 
   tick();

@@ -1,7 +1,7 @@
 (() => {
   // Countdown ends at: Jan 25, 2026 3:30 PM PST
   // PST is UTC-8, so that's Jan 25, 2026 23:30:00 UTC
-  const targetUtcMs = Date.UTC(2026, 0, 25, 23, 30, 0);
+  const targetUtcMs = Date.UTC(2026, 1, 8, 23, 30, 0);
 
   const elDays = document.getElementById("days");
   const elHours = document.getElementById("hours");
@@ -26,7 +26,7 @@
 
     if (diff <= 0) {
       setValues(0, 0, 0, 0);
-      elStatus.textContent = "Time’s up.";
+      elStatus.textContent = "Let's fuckin go!";
       return;
     }
 

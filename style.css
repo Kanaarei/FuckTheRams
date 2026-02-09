@@ -1,105 +1,93 @@
-:root {
-  --blue: #003087;
-  --green: #1b5e20;
-  --gray: #2b2b2b;
-  --white: #ffffff;
-}
-
+/* Base reset */
 * { box-sizing: border-box; }
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
+html, body { height: 100%; margin: 0; }
 
 body {
   font-family: "Libre Caslon Text", serif;
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  color: #fff;
 }
 
+/* Layout helpers */
 .band { width: 100%; }
-
-.band-blue { background: var(--blue); }
-.band-green { background: var(--green); flex: 1; }
-.band-gray { background: var(--gray); }
-
 .inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 24px 18px;
   text-align: center;
 }
 
-/* Keep header compact so image + countdown fit on screen */
-.inner-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+/* Original color design */
+.band-blue { background: #003087; }
+.band-green { background: #1b5e20; }
+.band-gray { background: #2b2b2b; }
 
-/* Make countdown section comfortable but not huge */
-.inner-countdown {
-  padding-top: 14px;
-  padding-bottom: 14px;
+/* Your existing typography */
+.title {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 80px);
+  letter-spacing: 1px;
 }
-
-/* Footer compact */
-.inner-footer {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.header-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  width: min(900px, 96vw);
-  height: auto;
-  max-height: 22vh;
-  object-fit: contain;
-}
-
 .subtitle {
-  margin: 0 0 12px 0;
-  font-size: clamp(18px, 2.8vw, 34px);
-  letter-spacing: 0.3px;
+  margin: 0 0 18px 0;
+  font-size: clamp(18px, 3vw, 34px);
+}
+.footer-text {
+  margin: 0;
+  font-size: 18px;
 }
 
+/* Timer styling (simple defaults) */
 .timer {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: wrap;
 }
-
 .unit {
-  min-width: 120px;
-  padding: 12px 14px;
+  min-width: 140px;
+  padding: 14px 16px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
 }
-
 .num {
-  font-size: clamp(36px, 5.2vw, 60px);
+  font-size: clamp(40px, 6vw, 64px);
   line-height: 1;
 }
-
 .label {
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.9;
 }
-
 .status {
-  margin: 10px 0 0 0;
-  font-size: 16px;
-  min-height: 20px;
+  margin: 14px 0 0 0;
+  min-height: 22px;
 }
 
-.footer-text {
-  margin: 0;
-  font-size: 16px;
-  opacity: 0.95;
+/* =========================================================
+   BACKGROUND IMAGE MODE
+   To disable and return to the original solid color design,
+   comment out this entire block.
+   ========================================================= */
+body {
+  background-image: url("mikemac-sbchamps.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* keeps aspect ratio, crops edges if needed */
+  background-attachment: fixed; /* optional: keeps image steady on scroll */
 }
+
+/* Make the bands transparent so the background shows through */
+.band-blue,
+.band-green,
+.band-gray {
+  background: transparent;
+}
+
+/* Optional: add a readable overlay so text stays legible over the image */
+.band-blue .inner,
+.band-green .inner,
+.band-gray .inner {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+}
+/* ========================================================= */

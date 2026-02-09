@@ -25,7 +25,7 @@
 
     if (diff <= 0) {
       setValues(0, 0, 0, 0);
-      elStatus.textContent = "Let's fuckin go!";
+      elStatus.textContent = "Countdown to NFL Draft 2026";
       return;
     }
 
@@ -36,7 +36,7 @@
     const seconds = totalSeconds % 60;
 
     setValues(days, hours, minutes, seconds);
-    elStatus.textContent = "Counting down to kickoff.";
+    elStatus.textContent = "Countdown to NFL Draft 2026";
   }
 
   tick();

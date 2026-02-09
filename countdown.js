@@ -1,45 +1,42 @@
-(() => {
-  // Countdown ends at: Jan 25, 2026 3:30 PM PST
-  // PST is UTC-8, so that's Jan 25, 2026 23:30:00 UTC
-  const targetUtcMs = Date.UTC(2026, 1, 8, 23, 30, 0);
+// 2026 NFL Draft (Round 1 start): April 23, 2026 at 8:00 PM Eastern, 5:00 PM Pacific
+// Using a fixed Pacific offset for the displayed target time.
+const TARGET_KICKOFF = new Date("2026-04-23T17:00:00-07:00");
 
-  const elDays = document.getElementById("days");
-  const elHours = document.getElementById("hours");
-  const elMinutes = document.getElementById("minutes");
-  const elSeconds = document.getElementById("seconds");
-  const elStatus = document.getElementById("status");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const statusEl = document.getElementById("status");
 
-  function pad(n) {
-    return String(n).padStart(2, "0");
+function pad(n) {
+  return n.toString().padStart(2, "0");
+}
+
+function updateCountdown() {
+  const now = new Date();
+  const diffMs = TARGET_KICKOFF.getTime() - now.getTime();
+
+  if (diffMs <= 0) {
+    daysEl.textContent = "0";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    statusEl.textContent = "Draft time!";
+    return;
   }
 
-  function setValues(d, h, m, s) {
-    elDays.textContent = String(d);
-    elHours.textContent = pad(h);
-    elMinutes.textContent = pad(m);
-    elSeconds.textContent = pad(s);
-  }
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+  const seconds = totalSeconds % 60;
 
-  function tick() {
-    const now = Date.now();
-    const diff = targetUtcMs - now;
+  daysEl.textContent = days.toString();
+  hoursEl.textContent = pad(hours);
+  minutesEl.textContent = pad(minutes);
+  secondsEl.textContent = pad(seconds);
+  statusEl.textContent = "";
+}
 
-    if (diff <= 0) {
-      setValues(0, 0, 0, 0);
-      elStatus.textContent = "Let's fuckin go!";
-      return;
-    }
-
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-
-    setValues(days, hours, minutes, seconds);
-    elStatus.textContent = "Counting down to kickoff.";
-  }
-
-  tick();
-  setInterval(tick, 250);
-})();
+updateCountdown();
+setInterval(updateCountdown, 1000);

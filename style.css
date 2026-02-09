@@ -119,7 +119,7 @@ body{
 /* GRAY footer area */
 .band-gray{
   background:var(--gray);
-  color:var(--black);
+  color:var(--white);
   flex:0.6;
 }
 

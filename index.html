@@ -12,13 +12,19 @@
 
 <body>
   <header class="band band-blue">
-    <div class="inner">
-      <img src="mikemac-sbchamps.webp" alt="Seahawks Superbowl 60 Champs" class="header-image" />
+    <div class="inner inner-header">
+      <img
+        src="mikemac-sbchamps.webp"
+        alt="Seahawks SB Champs"
+        class="header-image"
+        loading="eager"
+        decoding="async"
+      />
     </div>
   </header>
 
   <section class="band band-green" aria-label="Countdown">
-    <div class="inner">
+    <div class="inner inner-countdown">
       <h2 class="subtitle">Countdown to the NFL Draft</h2>
 
       <div class="timer" role="timer" aria-live="polite">
@@ -41,11 +47,15 @@
       </div>
 
       <p class="status" id="status"></p>
+
+      <noscript>
+        <p class="status">JavaScript is disabled. Enable it to see the countdown.</p>
+      </noscript>
     </div>
   </section>
 
   <footer class="band band-gray">
-    <div class="inner">
+    <div class="inner inner-footer">
       <p class="footer-text">Draft day is coming.  Fuck the Rams.</p>
     </div>
   </footer>

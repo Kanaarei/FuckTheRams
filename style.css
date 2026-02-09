@@ -17,71 +17,89 @@ body {
   color: var(--white);
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-.band {
-  width: 100%;
-}
+.band { width: 100%; }
+
+.band-blue { background: var(--blue); }
+.band-green { background: var(--green); flex: 1; }
+.band-gray { background: var(--gray); }
 
 .inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px 18px;
+  padding: 12px 16px;
   text-align: center;
 }
 
-.band-blue { background: var(--blue); }
-.band-green { background: var(--green); }
-.band-gray { background: var(--gray); }
+/* Keep header compact so image + countdown fit on screen */
+.inner-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Make countdown section comfortable but not huge */
+.inner-countdown {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Footer compact */
+.inner-footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 .header-image {
   display: block;
   margin: 0 auto;
-  max-width: min(900px, 100%);
-  max-height: 180px;
+  max-width: 100%;
+  width: min(900px, 96vw);
   height: auto;
+  max-height: 22vh;
+  object-fit: contain;
 }
 
 .subtitle {
-  margin: 0 0 18px 0;
-  font-size: clamp(20px, 3.2vw, 36px);
-  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  font-size: clamp(18px, 2.8vw, 34px);
+  letter-spacing: 0.3px;
 }
 
 .timer {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .unit {
-  min-width: 140px;
-  padding: 14px 16px;
+  min-width: 120px;
+  padding: 12px 14px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(3px);
 }
 
 .num {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(36px, 5.2vw, 60px);
   line-height: 1;
 }
 
 .label {
   margin-top: 6px;
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
 .status {
-  margin: 14px 0 0 0;
-  font-size: 18px;
-  min-height: 22px;
+  margin: 10px 0 0 0;
+  font-size: 16px;
+  min-height: 20px;
 }
 
 .footer-text {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.95;
 }

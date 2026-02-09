@@ -156,10 +156,16 @@ body {
 }
 
 /* Optional: add a readable overlay so text stays legible over the image */
-.band-blue .inner,
-.band-green .inner,
+.band-blue .inner{
+  background: rgba(0, 48, 135, 0.45);
+  border-radius: 18px;
+}
+.band-green .inner{
+  background: rgba(4, 106, 56, 0.45);
+  border-radius: 18px;
+}
 .band-gray .inner {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(178, 180, 178, 0.45);
   border-radius: 18px;
 }
 /* ========================================================= */

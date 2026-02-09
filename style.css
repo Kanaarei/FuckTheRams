@@ -135,3 +135,31 @@ body{
     grid-template-columns:repeat(2,minmax(120px,1fr));
   }
 }
+/* =========================================================
+   BACKGROUND IMAGE MODE
+   To disable and return to the original solid color design,
+   comment out this entire block.
+   ========================================================= */
+body {
+  background-image: url("mikemac-sbchamps.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* keeps aspect ratio, crops edges if needed */
+  background-attachment: fixed; /* optional: keeps image steady on scroll */
+}
+
+/* Make the bands transparent so the background shows through */
+.band-blue,
+.band-green,
+.band-gray {
+  background: transparent;
+}
+
+/* Optional: add a readable overlay so text stays legible over the image */
+.band-blue .inner,
+.band-green .inner,
+.band-gray .inner {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+}
+/* ========================================================= */
